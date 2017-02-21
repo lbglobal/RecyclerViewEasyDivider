@@ -1,6 +1,6 @@
 基于 RecyclerView ItemDecoration 实现的分割线和 RecyclerView 圆角背景
 
-### Features
+## Features
 
 Linear divider support vertical and horizontal.
 
@@ -15,6 +15,8 @@ Grid divider can be show the left divider, top divider, right divider, bottom di
 Gird divider is best not to set the dotted line this time, due to bad performance. 
 
 Both linear & grid divider can be set the rounded rectangle, and will not cover those corner radius when scroll the list.
+
+---
 
 Linear divider 支持纵向和横向，可以设置 header divider、footer divider、divider margin、虚线。
 
@@ -54,7 +56,7 @@ Grid divider example:
 
 If you would like to set left, top, right, bottom divider, additional padding settings in the xml file is need.
 
-如果要设置 left、top、right、bottom divider，需要在 xml 布局文件中额外设置 paddings。
+如果要设置 left、top、right、bottom divider，需要在 xml 布局文件中额外设置 padding。
 
 ```Xml
         android:padding="10dp"
