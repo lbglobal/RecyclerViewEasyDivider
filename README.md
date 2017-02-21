@@ -1,4 +1,6 @@
-基于 RecyclerView ItemDecoration 实现的分割线和 RecyclerView 圆角背景
+基于 RecyclerView ItemDecoration 实现的分割线和 RecyclerView 圆角背景。
+
+Lastest version: 1.0.3
 
 ## Features
 
@@ -24,7 +26,23 @@ Grid divider 只支持纵向，可以设置每个 item 之间的间距，并且�
 
 Linear divider 和 grid divider 都可以设置圆角的背景，并且在滑动列表的时候 4 个圆角不会被覆盖。
 
-## How to use
+## Demo download
+
+[app-debug.apk](https://github.com/wordplat/RecyclerViewEasyDivider/releases/download/v1.0.3/app-debug.apk)
+
+## Usage
+
+gradle
+
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.wordplat:RecyclerViewEasyDivider:1.0.3'
+}
+```
 
 Linear divider example:
 
@@ -49,8 +67,6 @@ Linear divider example:
         textList.addItemDecoration(cornerRadius);
         textList.addItemDecoration(linearDivider);
 ```
-
-
 
 Grid divider example:
 

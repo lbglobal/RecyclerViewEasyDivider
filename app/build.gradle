@@ -29,6 +29,9 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 repositories {
