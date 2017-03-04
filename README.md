@@ -26,6 +26,11 @@ Grid divider 只支持纵向，可以设置每个 item 之间的间距，并且�
 
 Linear divider 和 grid divider 都可以设置圆角的背景，并且在滑动列表的时候 4 个圆角不会被覆盖。
 
+## Sceenshot
+
+![](screenshot/S70303-192419.jpg)![](screenshot/S70303-192329.jpg)![](screenshot/S70303-192342.jpg)
+![](screenshot/S70303-19260513.jpg)![](screenshot/S70303-192616.jpg)
+
 ## Demo download
 
 [app-debug.apk](https://github.com/wordplat/RecyclerViewEasyDivider/releases/download/v1.0.3/app-debug.apk)
