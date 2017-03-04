@@ -30,7 +30,7 @@ Linear divider 和 grid divider 都可以设置圆角的背景，并且在滑动
 
 ![](screenshot/S70303-192419.jpg)    ![](screenshot/S70303-192329.jpg)    ![](screenshot/S70303-192342.jpg)
 
-![](screenshot/S70303-19260513.jpg)    ![](screenshot/S70303-192616.jpg)
+![](screenshot/S70303-19260513.jpg)    ![](screenshot/S70303-192616.jpg)    ![](screenshot/S70304-150102.jpg)
 
 ## Demo download
 
