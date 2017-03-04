@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wordplat.quickstart.R;
+import com.wordplat.quickstart.activity.ExampleForGrid3x2RecyclerViewActivity;
 import com.wordplat.quickstart.activity.ExampleForGrid3x3RecyclerViewActivity;
 import com.wordplat.quickstart.activity.ExampleForGridNxNRecyclerViewActivity;
 import com.wordplat.quickstart.activity.ExampleForHorizontalRecyclerViewActivity;
@@ -29,6 +30,7 @@ public class TextAdapter extends RecyclerView.Adapter<TextViewHolder> {
         textList.add("ExampleForVerticalRecyclerView");
         textList.add("ExampleForVerticalRecyclerView2");
         textList.add("ExampleForHorizontalRecyclerView");
+        textList.add("ExampleForGrid3x2RecyclerView");
         textList.add("ExampleForGrid3x3RecyclerView");
         textList.add("ExampleForGridNxNRecyclerView");
     }
@@ -67,10 +69,14 @@ public class TextAdapter extends RecyclerView.Adapter<TextViewHolder> {
                         break;
 
                     case 3:
-                        intent = ExampleForGrid3x3RecyclerViewActivity.createIntent(mActivity);
+                        intent = ExampleForGrid3x2RecyclerViewActivity.createIntent(mActivity);
                         break;
 
                     case 4:
+                        intent = ExampleForGrid3x3RecyclerViewActivity.createIntent(mActivity);
+                        break;
+
+                    case 5:
                         intent = ExampleForGridNxNRecyclerViewActivity.createIntent(mActivity);
                         break;
 

@@ -39,6 +39,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".activity.ExampleForGrid3x2RecyclerViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".activity.ExampleForGrid3x3RecyclerViewActivity"
             android:screenOrientation="portrait" />
 
