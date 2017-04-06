@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 3
-        versionName "1.0.3"
+        versionCode LIB_VERSION_CODE as int
+        versionName LIB_VERSION_NAME as String
     }
     buildTypes {
         release {

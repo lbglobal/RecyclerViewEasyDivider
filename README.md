@@ -1,6 +1,6 @@
 基于 RecyclerView ItemDecoration 实现的分割线和 RecyclerView 圆角背景。
 
-Lastest version: 1.0.3
+Lastest version: 1.0.4
 
 ## Features
 
@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.wordplat:RecyclerViewEasyDivider:1.0.3'
+    compile 'com.wordplat:RecyclerViewEasyDivider:1.0.4'
 }
 ```
 

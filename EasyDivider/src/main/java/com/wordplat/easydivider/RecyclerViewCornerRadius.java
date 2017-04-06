@@ -2,10 +2,12 @@ package com.wordplat.easydivider;
 
 import android.graphics.Canvas;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewTreeObserver;
 
 /**
@@ -15,30 +17,29 @@ import android.view.ViewTreeObserver;
  */
 
 public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
-    public static final String TAG = "RecyclerViewCornerRadius";
+    public static final String TAG = "CornerRadius";
 
-    private RectF rectF;
-    private Path path;
+    private final RectF rectF;
+    private final Path path;
 
     private int topLeftRadius = 0;
     private int topRightRadius = 0;
     private int bottomLeftRadius = 0;
     private int bottomRightRadius = 0;
 
+    private View lastItemView;
+    private int recyclerViewBottom = -1;
+
     public RecyclerViewCornerRadius(final RecyclerView recyclerView) {
+        path = new Path();
+        rectF = new RectF();
+
         recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                rectF = new RectF(0, 0, recyclerView.getMeasuredWidth(), recyclerView.getMeasuredHeight());
+                rectF.set(0, 0, recyclerView.getMeasuredWidth(), recyclerView.getMeasuredHeight());
 
-                path = new Path();
-                path.reset();
-                path.addRoundRect(rectF, new float[]{
-                        topLeftRadius, topLeftRadius,
-                        topRightRadius, topRightRadius,
-                        bottomLeftRadius, bottomLeftRadius,
-                        bottomRightRadius, bottomRightRadius
-                }, Path.Direction.CCW);
+                setRoundRect();
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
@@ -63,8 +64,39 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
         this.bottomRightRadius = bottomRightRadius;
     }
 
+    private void setRoundRect() {
+        path.reset();
+        path.addRoundRect(rectF, new float[]{
+                topLeftRadius, topLeftRadius,
+                topRightRadius, topRightRadius,
+                bottomLeftRadius, bottomLeftRadius,
+                bottomRightRadius, bottomRightRadius
+        }, Path.Direction.CCW);
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+
+        int childCount = parent.getAdapter().getItemCount();
+
+        if (parent.getChildAdapterPosition(view) == childCount - 1) {
+            lastItemView = view;
+        }
+    }
+
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        if (recyclerViewBottom == -1 && lastItemView != null) {
+            recyclerViewBottom = lastItemView.getBottom() + parent.getLayoutManager().getBottomDecorationHeight(lastItemView);
+
+            if (rectF.bottom > recyclerViewBottom) {
+                rectF.bottom = recyclerViewBottom;
+
+                setRoundRect();
+            }
+        }
+
         c.clipRect(rectF);
         c.clipPath(path, Region.Op.REPLACE);
     }
