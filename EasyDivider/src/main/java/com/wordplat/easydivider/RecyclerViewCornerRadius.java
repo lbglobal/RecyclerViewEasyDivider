@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
+import static android.view.View.LAYER_TYPE_SOFTWARE;
+
 /**
  * 圆角 RecyclerView
  *
@@ -33,6 +35,11 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
     public RecyclerViewCornerRadius(final RecyclerView recyclerView) {
         path = new Path();
         rectF = new RectF();
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            recyclerView.setLayerType(LAYER_TYPE_SOFTWARE, null);
+        }
 
         recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
