@@ -35,6 +35,7 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
     public RecyclerViewCornerRadius(final RecyclerView recyclerView) {
         path = new Path();
         rectF = new RectF();
+        rectF.set(0, 0, 0, 0);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2
                 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -47,12 +48,6 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
                 rectF.set(0, 0, recyclerView.getMeasuredWidth(), recyclerView.getMeasuredHeight());
 
                 setRoundRect();
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                } else {
-                    recyclerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                }
             }
         });
     }
@@ -89,12 +84,14 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
 
         if (parent.getChildAdapterPosition(view) == childCount - 1) {
             lastItemView = view;
+        } else {
+            lastItemView = null;
         }
     }
 
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        if (recyclerViewBottom == -1 && lastItemView != null) {
+        if (lastItemView != null) {
             recyclerViewBottom = lastItemView.getBottom() + parent.getLayoutManager().getBottomDecorationHeight(lastItemView);
 
             if (rectF.bottom > recyclerViewBottom) {
