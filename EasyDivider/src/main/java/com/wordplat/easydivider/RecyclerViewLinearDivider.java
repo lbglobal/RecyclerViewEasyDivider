@@ -234,7 +234,7 @@ public class RecyclerViewLinearDivider extends RecyclerView.ItemDecoration {
         }
 
         // i 从 -1 开始是为了画 headerDivider
-        for (int i = showHeaderDivider ? -1 : 0; i < childSize; i++) {
+        for (int i = showHeaderDivider ? -1 : 0; i < (showFooterDivider ? childSize : childSize - 1); i++) {
             final int left = i == -1 ? parent.getChildAt(0).getLeft() - dividerHeight : parent.getChildAt(i).getRight();
             final int right = left + dividerHeight;
 
@@ -269,7 +269,7 @@ public class RecyclerViewLinearDivider extends RecyclerView.ItemDecoration {
         }
 
         // i 从 -1 开始是为了画 headerDivider
-        for (int i = showHeaderDivider ? -1 : 0; i < childSize; i++) {
+        for (int i = showHeaderDivider ? -1 : 0; i < (showFooterDivider ? childSize : childSize - 1); i++) {
             final int top = i == -1 ? parent.getChildAt(0).getTop() - dividerHeight : parent.getChildAt(i).getBottom();
             final int bottom = top + dividerHeight;
 

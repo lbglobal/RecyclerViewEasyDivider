@@ -40,6 +40,7 @@ public class ExampleForVerticalRecyclerViewActivity extends BaseActivity {
         RecyclerViewLinearDivider linearDivider = new RecyclerViewLinearDivider(mActivity, LinearLayoutManager.VERTICAL);
         linearDivider.setDividerSize(AppUtils.dpTopx(mActivity, 10));
         linearDivider.setDividerColor(0xff888888);
+        linearDivider.setShowHeaderDivider(false);
 
         // 圆角背景必须第一个添加
         textList.addItemDecoration(cornerRadius);
