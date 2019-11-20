@@ -14,7 +14,7 @@ import static android.view.View.LAYER_TYPE_SOFTWARE;
 
 /**
  * 圆角 RecyclerView
- *
+ * <p>
  * Created by afon on 2017/1/5.
  */
 
@@ -37,8 +37,7 @@ public class RecyclerViewCornerRadius extends RecyclerView.ItemDecoration {
         rectF = new RectF();
         rectF.set(0, 0, 0, 0);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2
-                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
             recyclerView.setLayerType(LAYER_TYPE_SOFTWARE, null);
         }
 
