@@ -57,7 +57,7 @@
                 android:textSize="15dp"
                 android:textColor="#282b34"/>
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Coupon_List"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />

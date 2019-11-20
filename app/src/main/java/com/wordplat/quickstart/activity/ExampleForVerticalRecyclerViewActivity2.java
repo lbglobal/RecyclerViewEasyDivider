@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.wordplat.easydivider.RecyclerViewCornerRadius;
 import com.wordplat.easydivider.RecyclerViewLinearDivider;

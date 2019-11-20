@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:background="#ffffff">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gridNxNList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
