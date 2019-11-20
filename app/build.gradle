@@ -43,16 +43,16 @@ repositories {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
     implementation 'org.xutils:xutils:3.3.36'
     // 设置状态栏颜色
     implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     // multidex
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation project(path: ':EasyDivider')
     // 一个带 fit 和 fade 实现的 Picasso 版本
     implementation name: 'picasso-release-2.5.2.4b', ext: 'aar'

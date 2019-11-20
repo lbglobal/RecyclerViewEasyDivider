@@ -3,7 +3,7 @@ package com.wordplat.quickstart.app;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 import com.wordplat.quickstart.BuildConfig;
 
 import org.xutils.x;

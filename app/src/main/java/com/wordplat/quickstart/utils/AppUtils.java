@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
 import android.os.Parcelable;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
